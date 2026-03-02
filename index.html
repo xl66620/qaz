@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>彭阳璐 · 美术教师创意作品集</title>
 <style>
-/* 保留原有所有样式，此处省略（样式部分和之前一致） */
+/* 全局重置与基础样式 */
 * {
   margin: 0;
   padding: 0;
@@ -21,6 +21,7 @@ html, body {
   scroll-behavior: smooth;
 }
 
+/* 渐变背景装饰 */
 body::before {
   content: '';
   position: fixed;
@@ -41,6 +42,7 @@ body::before {
   gap: 0;
 }
 
+/* 左侧导航：设计感升级 - 毛玻璃+渐变边框 */
 .sidebar {
   width: 280px;
   background: rgba(255, 255, 255, 0.85);
@@ -56,6 +58,7 @@ body::before {
   justify-content: space-between;
 }
 
+/* 个人标识区 */
 .sidebar-header .name {
   font-size: 24px;
   font-weight: 700;
@@ -84,6 +87,7 @@ body::before {
   font-style: italic;
 }
 
+/* 导航按钮：动态光效+非对称设计 */
 .nav-list {
   margin: 60px 0;
 }
@@ -128,6 +132,7 @@ body::before {
   box-shadow: 0 4px 12px rgba(74, 92, 117, 0.1);
 }
 
+/* 图标占位（增强设计感） */
 .nav-btn i {
   width: 24px;
   height: 24px;
@@ -139,17 +144,20 @@ body::before {
   opacity: 1;
 }
 
+/* 底部版权 */
 .sidebar-footer {
   font-size: 12px;
   color: #9CA3AF;
 }
 
+/* 右侧内容区：自适应+分区设计 */
 .content {
   flex: 1;
   margin-left: 280px;
   padding: 60px 50px;
 }
 
+/* 页面通用样式：渐入动画+分区标题 */
 .page {
   display: none;
   animation: pageFadeIn 0.7s ease forwards;
@@ -165,6 +173,7 @@ body::before {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* 标题系统：分级设计 */
 .main-title {
   font-size: 36px;
   font-weight: 700;
@@ -180,6 +189,7 @@ body::before {
   font-weight: 400;
 }
 
+/* 卡片样式：毛玻璃+圆角阴影升级 */
 .card {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(8px);
@@ -224,11 +234,14 @@ body::before {
   margin-top: 12px;
 }
 
+/* 强调色 */
 .highlight {
   color: #4A5C75;
   font-weight: 600;
 }
 
+/* --- 作品展示区：核心设计感板块 --- */
+/* 作品头部：视觉横幅+标语 */
 .portfolio-header {
   margin-bottom: 50px;
   text-align: center;
@@ -252,6 +265,7 @@ body::before {
   margin: 0 auto;
 }
 
+/* 分类标题：带图标+色彩标识 */
 .portfolio-cat {
   font-size: 20px;
   font-weight: 600;
@@ -269,21 +283,25 @@ body::before {
   border-radius: 2px;
 }
 
+/* 不同分类不同色彩标识 */
 .cat-digital span { background: #4A5C75; }
 .cat-hand span { background: #D97706; }
 .cat-other span { background: #10B981; }
 .cat-teach span { background: #EC4899; }
 
+/* 作品网格：混合尺寸+响应式，打破呆板 */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
 }
 
+/* 核心作品：大尺寸卡片（占2格） */
 .portfolio-item-lg {
   grid-column: span 2;
 }
 
+/* 作品卡片：双层阴影+悬停动效+信息层叠 */
 .portfolio-item {
   background: #FFF;
   border-radius: 16px;
@@ -299,6 +317,7 @@ body::before {
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
+/* 作品图片容器：比例控制+渐变叠加 */
 .portfolio-img {
   width: 100%;
   height: 220px;
@@ -321,6 +340,7 @@ body::before {
   transform: scale(1.12);
 }
 
+/* 图片渐变层：增强文字可读性 */
 .portfolio-img::after {
   content: '';
   position: absolute;
@@ -332,6 +352,7 @@ body::before {
   z-index: 1;
 }
 
+/* 作品信息：层叠在图片上，增强设计感 */
 .portfolio-info {
   padding: 20px 24px;
   position: relative;
@@ -361,6 +382,7 @@ body::before {
   overflow: hidden;
 }
 
+/* 图片预览：高级弹窗+丝滑动画 */
 .preview-modal {
   position: fixed;
   top: 0;
@@ -397,6 +419,7 @@ body::before {
   transform: scale(1);
 }
 
+/* 移动端适配：重构布局，保留设计感 */
 @media (max-width: 1024px) {
   .portfolio-item-lg {
     grid-column: span 1;
@@ -473,7 +496,7 @@ body::before {
 <body>
 
 <div class="wrapper">
-  <!-- 左侧导航 -->
+  <!-- 左侧导航：设计感升级 -->
   <div class="sidebar">
     <div class="sidebar-header">
       <div class="name">彭阳璐</div>
@@ -575,19 +598,21 @@ body::before {
       </div>
     </div>
 
-    <!-- 3 作品展示：替换为稳定的占位图 -->
+    <!-- 3 作品展示：核心设计感板块 -->
     <div class="page" id="p3">
+      <!-- 作品头部横幅 -->
       <div class="portfolio-header">
         <h2>视觉创作与教学实践作品集</h2>
         <p>融合数字艺术与传统绘画，兼顾专业创作与美育教学，探索美术的多元可能</p>
       </div>
 
       <div class="portfolio-container">
-        <!-- 1. 板绘插画 -->
+        <!-- 1. 个人创作 · 板绘插画（核心硬实力，大尺寸突出镇场作品） -->
         <div class="portfolio-cat cat-digital">
           <span></span> 个人创作 · 板绘插画
         </div>
         <div class="portfolio-grid">
+          <!-- 镇场作品：大尺寸卡片 -->
           <div class="portfolio-item portfolio-item-lg">
             <div class="portfolio-img">
               <img src="https://github.com/xl66620/qaz/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103416_510_3.jpg?raw=true" alt="废弃安全屋">
@@ -598,6 +623,7 @@ body::before {
             </div>
           </div>
 
+          <!-- 常规作品 -->
           <div class="portfolio-item">
             <div class="portfolio-img">
               <img src="https://github.com/xl66620/qaz/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103414_509_3.png?raw=true" alt="治沙人">
@@ -639,7 +665,7 @@ body::before {
           </div>
         </div>
 
-        <!-- 2. 手绘 -->
+        <!-- 2. 个人创作 · 手绘（暖色调标识） -->
         <div class="portfolio-cat cat-hand">
           <span></span> 个人创作 · 手绘
         </div>
@@ -665,7 +691,7 @@ body::before {
           </div>
         </div>
 
-        <!-- 3. 其他媒介 -->
+        <!-- 3. 个人创作 · 其他媒介（绿色标识） -->
         <div class="portfolio-cat cat-other">
           <span></span> 个人创作 · 其他媒介
         </div>
@@ -681,7 +707,7 @@ body::before {
           </div>
         </div>
 
-        <!-- 4. 教学现场 -->
+        <!-- 4. 教学成果 · 教学现场（粉色标识） -->
         <div class="portfolio-cat cat-teach">
           <span></span> 教学成果 · 教学现场
         </div>
@@ -777,3 +803,55 @@ body::before {
   </div>
 </div>
 
+<!-- 图片预览弹窗 -->
+<div class="preview-modal" id="previewModal">
+  <img src="" alt="作品预览" class="preview-content" id="previewImg">
+</div>
+
+<script>
+// 页面切换逻辑
+const btns = document.querySelectorAll('.nav-btn');
+const pages = document.querySelectorAll('.page');
+function show(i) {
+  // 移除所有激活状态
+  btns.forEach(btn => btn.classList.remove('active'));
+  pages.forEach(page => page.classList.remove('active'));
+  // 添加当前激活状态
+  btns[i].classList.add('active');
+  pages[i].classList.add('active');
+  // 作品页滚动到顶部
+  if (i === 3) {
+    document.getElementById('p3').scrollTop = 0;
+  }
+}
+
+// 图片预览逻辑
+const previewModal = document.getElementById('previewModal');
+const previewImg = document.getElementById('previewImg');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+portfolioItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const imgSrc = item.querySelector('.portfolio-img img').src;
+    previewImg.src = imgSrc;
+    previewModal.classList.add('active');
+    // 禁止页面滚动
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+// 关闭预览弹窗
+previewModal.addEventListener('click', () => {
+  previewModal.classList.remove('active');
+  // 恢复页面滚动
+  document.body.style.overflow = 'auto';
+});
+
+// 阻止图片点击冒泡
+previewImg.addEventListener('click', (e) => {
+  e.stopPropagation();
+});
+</script>
+
+</body>
+</html>
