@@ -42,7 +42,7 @@ body::before {
   gap: 0;
 }
 
-/* 左侧导航：毛玻璃+渐变边框 */
+/* 左侧导航：设计感升级 - 毛玻璃+渐变边框 */
 .sidebar {
   width: 280px;
   background: rgba(255, 255, 255, 0.85);
@@ -56,6 +56,7 @@ body::before {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-y: auto; /* 修复导航栏内容溢出问题 */
 }
 
 /* 个人标识区 */
@@ -87,7 +88,7 @@ body::before {
   font-style: italic;
 }
 
-/* 导航按钮动态光效 */
+/* 导航按钮：动态光效+非对称设计 */
 .nav-list {
   margin: 60px 0;
 }
@@ -132,6 +133,7 @@ body::before {
   box-shadow: 0 4px 12px rgba(74, 92, 117, 0.1);
 }
 
+/* 图标占位（增强设计感） */
 .nav-btn i {
   width: 24px;
   height: 24px;
@@ -143,22 +145,26 @@ body::before {
   opacity: 1;
 }
 
+/* 底部版权 */
 .sidebar-footer {
   font-size: 12px;
   color: #9CA3AF;
 }
 
-/* 右侧内容区 */
+/* 右侧内容区：自适应+分区设计 */
 .content {
   flex: 1;
   margin-left: 280px;
   padding: 60px 50px;
+  min-height: 100vh; /* 确保内容区高度足够 */
 }
 
+/* 页面通用样式：渐入动画+分区标题 */
 .page {
   display: none;
   animation: pageFadeIn 0.7s ease forwards;
   padding: 20px 0;
+  min-height: 80vh; /* 避免页面过短 */
 }
 
 .page.active {
@@ -170,6 +176,7 @@ body::before {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* 标题系统：分级设计 */
 .main-title {
   font-size: 36px;
   font-weight: 700;
@@ -185,7 +192,7 @@ body::before {
   font-weight: 400;
 }
 
-/* 毛玻璃卡片 */
+/* 卡片样式：毛玻璃+圆角阴影升级 */
 .card {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(8px);
@@ -230,12 +237,14 @@ body::before {
   margin-top: 12px;
 }
 
+/* 强调色 */
 .highlight {
   color: #4A5C75;
   font-weight: 600;
 }
 
-/* 作品头部横幅 */
+/* --- 作品展示区：核心设计感板块 --- */
+/* 作品头部：视觉横幅+标语 */
 .portfolio-header {
   margin-bottom: 50px;
   text-align: center;
@@ -259,7 +268,7 @@ body::before {
   margin: 0 auto;
 }
 
-/* 作品分类标题 */
+/* 分类标题：带图标+色彩标识 */
 .portfolio-cat {
   font-size: 20px;
   font-weight: 600;
@@ -277,22 +286,26 @@ body::before {
   border-radius: 2px;
 }
 
+/* 不同分类不同色彩标识 */
 .cat-digital span { background: #4A5C75; }
 .cat-hand span { background: #D97706; }
 .cat-other span { background: #10B981; }
 .cat-teach span { background: #EC4899; }
 
-/* 作品网格布局 */
+/* 作品网格：混合尺寸+响应式，打破呆板 */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
+  margin-bottom: 20px; /* 增加底部间距 */
 }
 
+/* 核心作品：大尺寸卡片（占2格） */
 .portfolio-item-lg {
   grid-column: span 2;
 }
 
+/* 作品卡片：双层阴影+悬停动效+信息层叠 */
 .portfolio-item {
   background: #FFF;
   border-radius: 16px;
@@ -308,6 +321,7 @@ body::before {
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
+/* 作品图片容器：比例控制+渐变叠加 */
 .portfolio-img {
   width: 100%;
   height: 220px;
@@ -330,6 +344,7 @@ body::before {
   transform: scale(1.12);
 }
 
+/* 图片渐变层：增强文字可读性 */
 .portfolio-img::after {
   content: '';
   position: absolute;
@@ -341,6 +356,7 @@ body::before {
   z-index: 1;
 }
 
+/* 作品信息：层叠在图片上，增强设计感 */
 .portfolio-info {
   padding: 20px 24px;
   position: relative;
@@ -370,7 +386,7 @@ body::before {
   overflow: hidden;
 }
 
-/* 图片预览弹窗 */
+/* 图片预览：高级弹窗+丝滑动画 */
 .preview-modal {
   position: fixed;
   top: 0;
@@ -407,7 +423,25 @@ body::before {
   transform: scale(1);
 }
 
-/* 移动端适配 */
+/* 关闭按钮 */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10000;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #ccc;
+  transform: scale(1.1);
+}
+
+/* 移动端适配：重构布局，保留设计感 */
 @media (max-width: 1024px) {
   .portfolio-item-lg {
     grid-column: span 1;
@@ -445,6 +479,12 @@ body::before {
     overflow-x: auto;
     padding-bottom: 8px;
     width: 100%;
+    -ms-overflow-style: none; /* 隐藏滚动条 */
+    scrollbar-width: none; /* 隐藏滚动条 */
+  }
+  
+  .nav-list::-webkit-scrollbar {
+    display: none; /* 隐藏滚动条 */
   }
 
   .nav-btn {
@@ -477,6 +517,28 @@ body::before {
   .portfolio-grid {
     gap: 18px;
   }
+  
+  /* 移动端证书列表单列显示 */
+  .card ul[style*="column-count: 2"] {
+    column-count: 1 !important;
+  }
+  
+  /* 移动端预览弹窗关闭按钮调整 */
+  .close-btn {
+    font-size: 30px;
+    top: 15px;
+    right: 20px;
+  }
+}
+
+/* 加载中效果 */
+.portfolio-img img {
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.8s ease;
+}
+
+.portfolio-img img.loading {
+  opacity: 0.5;
 }
 </style>
 </head>
@@ -484,7 +546,7 @@ body::before {
 <body>
 
 <div class="wrapper">
-  <!-- 左侧导航 -->
+  <!-- 左侧导航：设计感升级 -->
   <div class="sidebar">
     <div class="sidebar-header">
       <div class="name">彭阳璐</div>
@@ -586,22 +648,24 @@ body::before {
       </div>
     </div>
 
-    <!-- 3 作品展示 -->
+    <!-- 3 作品展示：核心设计感板块 -->
     <div class="page" id="p3">
+      <!-- 作品头部横幅 -->
       <div class="portfolio-header">
         <h2>视觉创作与教学实践作品集</h2>
         <p>融合数字艺术与传统绘画，兼顾专业创作与美育教学，探索美术的多元可能</p>
       </div>
 
       <div class="portfolio-container">
-        <!-- 1. 个人创作 · 板绘插画 -->
+        <!-- 1. 个人创作 · 板绘插画（核心硬实力，大尺寸突出镇场作品） -->
         <div class="portfolio-cat cat-digital">
           <span></span> 个人创作 · 板绘插画
         </div>
         <div class="portfolio-grid">
+          <!-- 镇场作品：大尺寸卡片 -->
           <div class="portfolio-item portfolio-item-lg">
             <div class="portfolio-img">
-              <img src="https://pyl2002.oss-cn-shanghai.aliyuncs.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103416_51_3.jpg" alt="废弃安全屋" loading="lazy">
+              <img src="https://github.com/xl66620/qaz/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103416_510_3.jpg?raw=true" alt="废弃安全屋" loading="lazy">
             </div>
             <div class="portfolio-info">
               <div class="title">《废弃安全屋》</div>
@@ -609,9 +673,10 @@ body::before {
             </div>
           </div>
 
+          <!-- 常规作品 -->
           <div class="portfolio-item">
             <div class="portfolio-img">
-              <img src="https://pyl2002.oss-cn-shanghai.aliyuncs.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103414_509_3.jpg" alt="治沙人" loading="lazy">
+              <img src="https://github.com/xl66620/qaz/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103414_509_3.png?raw=true" alt="治沙人" loading="lazy">
             </div>
             <div class="portfolio-info">
               <div class="title">《治沙人》</div>
@@ -621,7 +686,7 @@ body::before {
 
           <div class="portfolio-item">
             <div class="portfolio-img">
-              <img src="https://pyl2002.oss-cn-shanghai.aliyuncs.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103516_518_3.jpg" alt="游乐场奇遇" loading="lazy">
+              <img src="https://github.com/xl66620/qaz/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103516_518_3.png?raw=true" alt="游乐场奇遇" loading="lazy">
             </div>
             <div class="portfolio-info">
               <div class="title">《游乐场奇遇》</div>
@@ -631,7 +696,7 @@ body::before {
 
           <div class="portfolio-item">
             <div class="portfolio-img">
-              <img src="https://pyl2002.oss-cn-shanghai.aliyuncs.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260301230127_499_3.jpg" alt="女猎手霁风" loading="lazy">
+              <img src="https://github.com/xl66620/qaz/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260301230127_499_3.png?raw=true" alt="女猎手霁风" loading="lazy">
             </div>
             <div class="portfolio-info">
               <div class="title">《女猎手霁风》</div>
@@ -641,7 +706,7 @@ body::before {
 
           <div class="portfolio-item">
             <div class="portfolio-img">
-              <img src="https://pyl2002.oss-cn-shanghai.aliyuncs.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103522_520_3.png" alt="奇幻之旅" loading="lazy">
+              <img src="https://github.com/xl66620/qaz/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103522_520_3.png?raw=true" alt="奇幻之旅" loading="lazy">
             </div>
             <div class="portfolio-info">
               <div class="title">《奇幻之旅》</div>
@@ -650,14 +715,14 @@ body::before {
           </div>
         </div>
 
-        <!-- 2. 个人创作 · 手绘（已替换你提供的两张正确链接） -->
+        <!-- 2. 个人创作 · 手绘（暖色调标识） -->
         <div class="portfolio-cat cat-hand">
           <span></span> 个人创作 · 手绘
         </div>
         <div class="portfolio-grid">
           <div class="portfolio-item">
             <div class="portfolio-img">
-              <img src="https://pyl2002.oss-cn-shanghai.aliyuncs.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103507_16_3.jpg" alt="青年肖像" loading="lazy">
+              <img src="https://github.com/xl66620/qaz/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103507_516_3.jpg?raw=true" alt="青年肖像" loading="lazy">
             </div>
             <div class="portfolio-info">
               <div class="title">《青年肖像》</div>
@@ -667,7 +732,7 @@ body::before {
 
           <div class="portfolio-item">
             <div class="portfolio-img">
-              <img src="https://pyl2002.oss-cn-shanghai.aliyuncs.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103509_51_3.jpg" alt="睡莲" loading="lazy">
+              <img src="https://github.com/xl66620/qaz/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103509_517_3.jpg?raw=true" alt="睡莲" loading="lazy">
             </div>
             <div class="portfolio-info">
               <div class="title">《睡莲》</div>
@@ -676,14 +741,14 @@ body::before {
           </div>
         </div>
 
-        <!-- 3. 个人创作 · 其他媒介 -->
+        <!-- 3. 个人创作 · 其他媒介（绿色标识） -->
         <div class="portfolio-cat cat-other">
           <span></span> 个人创作 · 其他媒介
         </div>
         <div class="portfolio-grid">
           <div class="portfolio-item">
             <div class="portfolio-img">
-              <img src="https://pyl2002.oss-cn-shanghai.aliyuncs.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103519_59_3.jpg" alt="井盖向日葵" loading="lazy">
+              <img src="https://github.com/xl66620/qaz/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103519_519_3.jpg?raw=true" alt="井盖向日葵" loading="lazy">
             </div>
             <div class="portfolio-info">
               <div class="title">《井盖向日葵》</div>
@@ -692,14 +757,14 @@ body::before {
           </div>
         </div>
 
-        <!-- 4. 教学成果 · 教学现场 -->
+        <!-- 4. 教学成果 · 教学现场（粉色标识） -->
         <div class="portfolio-cat cat-teach">
           <span></span> 教学成果 · 教学现场
         </div>
         <div class="portfolio-grid">
           <div class="portfolio-item">
             <div class="portfolio-img">
-              <img src="https://pyl2002.oss-cn-shanghai.aliyuncs.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103541_526_3.jpg" alt="初中美术鉴赏课" loading="lazy">
+              <img src="https://github.com/xl66620/qaz/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103541_526_3.jpg?raw=true" alt="初中美术鉴赏课" loading="lazy">
             </div>
             <div class="portfolio-info">
               <div class="title">《清明上河图》鉴赏课</div>
@@ -709,7 +774,7 @@ body::before {
 
           <div class="portfolio-item">
             <div class="portfolio-img">
-              <img src="https://pyl2002.oss-cn-shanghai.aliyuncs.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103542_527_3.jpg" alt="初中造型课" loading="lazy">
+              <img src="https://github.com/xl66620/qaz/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103542_527_3.jpg?raw=true" alt="初中造型课" loading="lazy">
             </div>
             <div class="portfolio-info">
               <div class="title">班级肖像画册创作</div>
@@ -719,7 +784,7 @@ body::before {
 
           <div class="portfolio-item">
             <div class="portfolio-img">
-              <img src="https://pyl2002.oss-cn-shanghai.aliyuncs.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103537_523_3.png" alt="少儿动画课" loading="lazy">
+              <img src="https://github.com/xl66620/qaz/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103537_523_3.png?raw=true" alt="少儿动画课" loading="lazy">
             </div>
             <div class="portfolio-info">
               <div class="title">定格动画创作课</div>
@@ -729,7 +794,7 @@ body::before {
 
           <div class="portfolio-item">
             <div class="portfolio-img">
-              <img src="https://pyl2002.oss-cn-shanghai.aliyuncs.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103540_525_3.jpg" alt="少儿水彩课" loading="lazy">
+              <img src="https://github.com/xl66620/qaz/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260302103540_525_3.jpg?raw=true" alt="少儿水彩课" loading="lazy">
             </div>
             <div class="portfolio-info">
               <div class="title">少儿水彩写生课</div>
@@ -790,6 +855,7 @@ body::before {
 
 <!-- 图片预览弹窗 -->
 <div class="preview-modal" id="previewModal">
+  <span class="close-btn" id="closeBtn">&times;</span>
   <img src="" alt="作品预览" class="preview-content" id="previewImg">
 </div>
 
@@ -798,53 +864,118 @@ body::before {
 const btns = document.querySelectorAll('.nav-btn');
 const pages = document.querySelectorAll('.page');
 function show(i) {
+  // 移除所有激活状态
   btns.forEach(btn => btn.classList.remove('active'));
   pages.forEach(page => page.classList.remove('active'));
+  // 添加当前激活状态
   btns[i].classList.add('active');
   pages[i].classList.add('active');
+  // 作品页滚动到顶部
   if (i === 3) {
-    document.getElementById('p3').scrollTop = 0;
+    document.getElementById('p3').scrollIntoView({ behavior: 'smooth' });
+  }
+  // 其他页面也平滑滚动到顶部
+  else {
+    pages[i].scrollIntoView({ behavior: 'smooth' });
   }
 }
 
 // 图片预览逻辑
 const previewModal = document.getElementById('previewModal');
 const previewImg = document.getElementById('previewImg');
+const closeBtn = document.getElementById('closeBtn');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
 
+// 打开预览
 portfolioItems.forEach(item => {
   item.addEventListener('click', () => {
-    const imgSrc = item.querySelector('.portfolio-img img').src;
+    const imgElement = item.querySelector('.portfolio-img img');
+    const imgSrc = imgElement.src;
+    const imgAlt = imgElement.alt;
+    
+    // 设置预览图片
     previewImg.src = imgSrc;
+    previewImg.alt = imgAlt;
+    
+    // 显示弹窗
     previewModal.classList.add('active');
+    
+    // 禁止页面滚动
     document.body.style.overflow = 'hidden';
+    
+    // 图片加载完成后优化显示
+    previewImg.onload = function() {
+      previewImg.style.opacity = '1';
+    };
+    
+    // 初始透明度
+    previewImg.style.opacity = '0.8';
   });
 });
 
-// 点击遮罩关闭预览
-previewModal.addEventListener('click', () => {
-  previewModal.classList.remove('active');
-  document.body.style.overflow = 'auto';
+// 关闭预览 - 点击关闭按钮
+closeBtn.addEventListener('click', () => {
+  closePreview();
 });
 
-// 点击大图阻止冒泡
+// 关闭预览 - 点击弹窗外区域
+previewModal.addEventListener('click', (e) => {
+  if (e.target === previewModal) {
+    closePreview();
+  }
+});
+
+// 关闭预览 - ESC键
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && previewModal.classList.contains('active')) {
+    closePreview();
+  }
+});
+
+// 阻止图片点击冒泡
 previewImg.addEventListener('click', (e) => {
   e.stopPropagation();
 });
 
-// ESC快捷键关闭预览
-document.addEventListener('keydown', (e) => {
-  if(e.key === 'Escape' && previewModal.classList.contains('active')){
-    previewModal.classList.remove('active');
-    document.body.style.overflow = 'auto';
+// 关闭预览的通用函数
+function closePreview() {
+  previewModal.classList.remove('active');
+  // 恢复页面滚动
+  document.body.style.overflow = 'auto';
+  // 重置图片src（可选）
+  setTimeout(() => {
+    previewImg.src = '';
+  }, 300);
+}
+
+// 图片懒加载优化
+document.addEventListener('DOMContentLoaded', function() {
+  // 检查浏览器是否原生支持懒加载
+  if ('loading' in HTMLImageElement.prototype) {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    images.forEach(img => {
+      // 加载中状态
+      img.classList.add('loading');
+      img.addEventListener('load', () => {
+        img.classList.remove('loading');
+      });
+    });
+  } else {
+    // 降级处理（兼容旧浏览器）
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+    document.body.appendChild(script);
   }
 });
 
-// 图片加载失败兜底容错
-document.querySelectorAll('.portfolio-img img').forEach(img => {
-  img.onerror = function() {
-    this.src = 'https://via.placeholder.com/400x220?text=作品加载失败，请检查OSS图片链接';
-  }
+// 平滑滚动优化
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
 });
 </script>
 
